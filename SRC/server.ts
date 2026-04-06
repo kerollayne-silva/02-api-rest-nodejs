@@ -3,7 +3,8 @@ import { env } from './env/index.js'
 
 app
     .listen({
-        port: env.PORT,
+        port: Number(process.env.PORT) || env.PORT,
+        host: '0.0.0.0',
     })
     .then(() => {
         console.log('HTTP server running!')
